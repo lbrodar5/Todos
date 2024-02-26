@@ -1,0 +1,21 @@
+<div>
+    <div class="card">
+        <div class="card-body">
+        <h5 class="card-title">{{todo.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Date: {{todo.date}}</h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary">
+            Done: <span (click)='toggle(todo)'>
+                
+                <fa-icon *ngIf="todo.done; else showXmark" [icon]="faCheck" class="text-success"></fa-icon>
+                
+                <ng-template #showXmark>
+                    <fa-icon [icon]="faXmark" class="text-danger"></fa-icon>
+                </ng-template>
+            </span>
+        </h6>
+        <a (click)='del(todo)' class="card-link text-decoration-none text-danger">
+            <fa-icon [icon]="faCircleXmark"></fa-icon>
+        </a>
+        </div>
+    </div>        
+</div>
